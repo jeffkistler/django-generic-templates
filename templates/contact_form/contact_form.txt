@@ -1,0 +1,3 @@
+A message was sent by {{ name }} <{{ email }}> from {{ site.name }}:
+
+{{ body }}

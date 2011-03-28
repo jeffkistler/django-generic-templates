@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="description" content="{% block page_description %}{% endblock page_description%}">
+    <meta name="author" content="{% block page_author %}{% endblock page_author %}">
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css">
+    {% block head_extra %}{% endblock head_extra %}
+  </head>
+  <body{% block body_attrs %}{% endblock %}>
+    {% block body %}
+      {% block content %}{% endblock content %}
+    {% endblock body %}
+  </body>
+  {% block script_extra %}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ STATIC_URL }}js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+  {% endblock script_extra %}
+</html>

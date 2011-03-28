@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Log in" %}{% endblock title %}
+
+{% block content %}
+
+{% with form as auth_form %}
+{% include "registration/login_form.html" %}
+{% endwith %}
+
+<p><a href="{% url django.contrib.auth.views.password_reset %}">{% trans "Forgot password?" %}</a></p>
+{% endblock content %}
