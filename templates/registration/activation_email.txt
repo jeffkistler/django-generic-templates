@@ -1,0 +1,13 @@
+{% load i18n %}
+{% url registration_activate_url activation_key as activate_url %}
+{% blocktrans with site.name as site_name and site.domain as site_domain %}
+An account for {{ site_name }} has been created for this email address. Please
+click the following link to activate your new account:
+
+http://{{ site_domain }}{{ activate_url }}
+
+Please note that this activation link is valid for {{ expiration_days }} days,
+after which you will have to restart the registration process.
+
+Thanks!
+{% endblocktrans %}
