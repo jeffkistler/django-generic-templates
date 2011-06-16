@@ -6,11 +6,9 @@
 {% block content %}
 
 <form action="." method="post">
-  <ul>
-    {{ form.as_ul }}
-    {% csrf_token %}
-    <li><input type="submit" value="{% trans "Register" %}"></li>
-  </ul>
+  {{ form.as_p }}
+  {% csrf_token %}
+  <input type="submit" value="{% trans "Register" %}">
 </form>
 
 {% endblock content %}
